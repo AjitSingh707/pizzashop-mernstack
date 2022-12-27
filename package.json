@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "node": "16.17.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix pizzafrontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "data:import": "node seeder.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix pizzafrontend && npm run build --prefix pizzafrontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "stripe": "^11.4.0",
+    "uuid": "^9.0.0"
+  }
+}
